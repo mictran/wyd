@@ -49,18 +49,18 @@ def getdistance(tr, key1, key2):
     elif key1 == key2:
   	return 0
     else:
-  	    return 0
+  	return 0
 
 # Return a list of people within the vip's distance_limit
 def getpeopleinradius(tr, vip, distance_limit):
 	mylist = getall(tr)
 	inradius = []
 	for key, value in mylist:
-		if str(vip) != str(key):
-                    try:
-			distance = getdistance(tr, str(vip), str(key))
-			if distance <= distance_limit:
-				inradius.append(key)
+	    if str(vip) != str(key):
+                try:
+		    distance = getdistance(tr, str(vip), str(key))
+		    if distance <= distance_limit:
+			inradius.append(key)
                     except Exception as e:
                         print "Failed to fetch %s" % (key)
 	return inradius
