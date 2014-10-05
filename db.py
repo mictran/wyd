@@ -8,7 +8,7 @@ db = fdb.open()
 
 # Returns all keys in the database
 def getall(tr):
-    X = tr[['AAA':'ZZZ']
+    X = tr['AAA':'ZZZ']
     return X
 
 # Add a person into the database, along with their coordinates
